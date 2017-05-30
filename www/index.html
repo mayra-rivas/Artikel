@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--declaring our app in the html header -->
+<html ng-app="myApp">
+	<head>
+		<title>Nyhetssida</title>
+
+		<meta charset="utf-8">
+
+		<!-- base href for Angular (HTML5 mode) -->
+		<base href="/">
+
+		<!-- meta tag for bootstrap (mobile devices) -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<!-- Google Analytics - Always leave as top-request -->
+		
+		<!--CSS -->
+		<link rel="icon" href="/favicon.png">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/angular-wizard.css">
+		<link rel="stylesheet" href="css/all.css">
+		<link rel="stylesheet" href="libs/ng-alertify.css">
+		<link href="css/angular-moment-picker.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+		<!-- JS libs -->
+		<script src="libs/jquery.min.js"></script>
+		<script src="libs/angular.js"></script>
+		<script src="libs/angular-touch.min.js"></script>
+		<script src="libs/angular-route.min.js"></script>
+		<script src="libs/angular-resource.min.js"></script>
+		<script src="libs/ui-bootstrap-tpls.min.js"></script>
+		<script src="libs/angular-locale_sv-se.js"></script>
+		<script src="libs/bootstrap.js"></script>
+		<script src="libs/angular-moment-picker.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.1.0/ng-google-chart.min.js" type="text/javascript"></script>
+		<script src='/libs/ng-alertify.js'></script>
+		<script src="https://cdn.rawgit.com/niklasvh/html2canvas/0.5.0-alpha2/dist/html2canvas.min.js"></script>		
+   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+   		<script src="libs/saveHtmlToPdf.min.js"></script>
+		
+		<!-- Controllers -->
+		<script src="app.js"></script>
+		<script src="controllers/artikel.js"></script>
+		<script src="controllers/home.js"></script>
+		<script src="controllers/addartikel.js"></script>
+		<script src="controllers/subkategori.js"></script>
+		<script src="controllers/huvudkategori.js"></script>
+		<script src="controllers/editartikel.js"></script>
+	
+
+		<!-- Directives -->
+		<!--<script src="directives/carousel.js"></script> -->
+		<script src="directives/footerSticky.js"></script> 
+		<script src="directives/headerNav.js"></script>
+		 <script src="directives/about.js"></script> 
+ 
+
+		
+		
+	</head>
+	<body class="Site" data-spy="scroll" data-target=".navbar" data-offset="10">
+	
+	<header>
+	 	<!--Here is where our header load -->
+		<header-nav></header-nav>
+	</header>
+		<ng-view></ng-view>
+
+
+		<footer-sticky></footer-sticky>		    	
+
+	</body>
+</html>
+
+
+
+

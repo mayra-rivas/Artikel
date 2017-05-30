@@ -1,0 +1,106 @@
+<div class="container">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add Artikel</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <!--controller AddartikelCtrl -->
+        <div class="col-md-12" ng-controller="AddartikelCtrl">
+          <form ng-submit="addArtikel()">
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" ng-model="Id_Artikel" placeholder="Id_Artikel">
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" ng-model="Rubrik" placeholder="Rubrik">
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 control">
+                  <div class="col-md-3">
+                    <input type="date" class="form-control" ng-model="DatumPublicerad" placeholder="DatumPublicerad">
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" ng-model="Ingress" placeholder="Ingress">
+                  </div>
+                </div>
+              </div><br>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <textarea type="text" rows="12" class="form-control" ng-model="Brodtext" placeholder="Brodtext"></textarea>
+                  <br>
+                </div>
+              </div>
+              <hr>
+
+            </div>
+            <div class="row">
+              <div class="col-md-12 control">
+                <div class="form-group col-md-6">
+                  <label>Huvudkategori: </label>
+                  <select name="myhuvudkategori" ng-model="myhuvudkategori" ng-change="changeMyHuvu(myhuvudkategori)" ng-options="item._id as item.huvudkategori_typ for item in huvudkategori">
+                    <option value="">--- choose huvudkategori ---</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Subkategori: </label>
+                  <select name="mysubkategori" ng-model="mysubkategori" ng-options="item._id as item.subkategoriNamn for item in subkategorifilter">
+                    <option value="">--- choose subkategori ---</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-md-12 control">
+                <div class="form-group col-md-4">
+
+                  <label>Bild av</label>
+                  <input type="text" class="form-control" ng-model="namn_fotograf" placeholder="Fotograf">
+                
+                
+                </div>
+                <p> fotograf: {{mybild.namn_fotograf}}</p>
+
+
+                <div class="form-group col-md-4">
+                  <label>Bild URL</label>
+                  <input type="text" class="form-control" ng-model="img_sokvag" placeholder="Image URL">
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Bild beskrivning</label>
+                  <input type="text" class="form-control" ng-model="beskrivning" placeholder="beskrivning">
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Bild text</label>
+                  <input type="text" class="form-control" ng-model="Bildtext" placeholder="Bildtext">
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <label>Medlem: </label>
+            <select name="myMedlem" ng-model="mymedlem" ng-options="item._id as item.fName + ' - ' + item.yrkesTitel for item in medlem">
+              <option value=""> choose medlem </option>
+            </select>
+
+            <hr>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+              <button class="btn btn-info"><a href="/artikel/har">Back</a></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+{
+  "name": "Artikel",
+  "version": "1.0.0",
+  "description": "package fil for nyhet project",
+  "main": "app.js",
+  "author": "Mayra",
+  "dependencies": {
+    "alertify": "*",
+    "body-parser": "*",
+    "compression": "^1.6.2",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-session": "^1.15.2",
+    "gulp": "*",
+    "gulp-clean-css": "^3.2.0",
+    "gulp-less": "*",
+    "mongoose": "*",
+    "serve-favicon": "^2.4.2"
+  }
+}

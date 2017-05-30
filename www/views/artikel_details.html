@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row">
+    <div ng-controller="artikelCtrl">
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h3 class="panel-title">Artikel detajl</h3>
+        </div>
+
+        <div class="panel-body artikeldetalj">
+          <div class="card">
+
+            <div class="col-xs-12 col-md-12">
+              <div class="row">
+                <p>{{artikel.artikel.DatumPublicerad | date:'yyyy-MM-dd'}}</p>
+                <h1>{{artikel.artikel.Rubrik}}</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-12">
+                <img class="imageArtiklar1" src="{{ artikel.bild.img_sokvag}}" alt="{{artikel.har.biltext}}">
+              </div>
+            </div>
+            <div class="card-block">
+              <p class="card-text"> <b>{{artikel.bild.beskrivning }}</b></p>
+              <p class="card-text"><b>Bild: </b> {{ artikel.bild.namn_fotograf}}</p>
+              <br>
+              <h4><!-- <b>Ingress</b> --> {{ artikel.artikel.Ingress}}</h4>
+              <p class="card-text">
+                <!-- <b>Brodtext</b> -->{{ artikel.artikel.Brodtext}}</p>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-xs-12 col-md-4" ng-repeat="skriven in skriv">
+                <p class="card-text"><b> {{skriven.medlem.fName}} </b> <a class="btn btn-primary medlem">{{skriven.medlem.yrkesTitel}}</a> </p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-xs-12 col-md-12">
+                <p class="h4">Läsarnas kommentarer</p>
+                <hr>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12" ng-repeat="komm in kommentar">
+              <p>
+                <b>{{komm.anvendarnamn}}</b> skrev: {{ komm.text_kommentar}}. <!-- Delete kommentar -->
+                  <a class="" href="" ng-click="deleteArtikelKommentar(komm)">Delete</a>
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Add comment byartikel -->
+          
+          <div class="container artikelDetail">
+            <div class="col-xs-12 col-md-12">
+              <div class="row">
+                <form ng-submit="addKommentar()">
+                  <label>Add kommentar!</label>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <input type="text" class="form-control" ng-model="anvendarnamn" placeholder="anvendarnamn">
+                      </div>
+                      <div class="col-md-5">
+                        <input type="date" class="form-control" ng-model="datum_kommentar" placeholder="datum_kommentar">
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <textarea type="text" rows="6" class="form-control" ng-model="text_kommentar" placeholder="text_kommentar">
+                        </textarea>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6 col-md-5 text-center">
+                          <ul class="card-box">
+                            <li class="card-bar"><a class="btn btn-warning" ng-click="addArtikelKommentar()">Add Kommentar</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+
+          <div class="col-xs-12 col-md-12 botones">
+            <hr>
+            <ul class="card-box">
+              <li class="card-bar col-xs-6 col-md-6"><a class="btn btn-primary" ng-href="/artikel/har">Back</a>
+              </li>
+            </ul>
+            <div class="pull-right col-xs-6 col-md-6">
+              <a href="/artikel/editArtikel/{{artikel._id}}">Edit</a> | <a href="" ng-click="deleteArtikel()">Delete</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End row -->
