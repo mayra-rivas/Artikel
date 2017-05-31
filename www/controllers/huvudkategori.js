@@ -15,7 +15,7 @@ myApp.controller('huvudkategoriCtrl', ['$scope', '$http', '$location', '$routePa
       var responseSort = $filter('orderBy')(response.data,'artikel.Id_artikel');
       
       var resp1 = {};
-
+      // $scope.huvudkategori = responseSort.artikel.subkategori.huvudkategori; probalo
       response.data.forEach(function(x){
         
         resp1 = responseSort.filter(function (y) { 
@@ -37,4 +37,4 @@ myApp.controller('huvudkategoriCtrl', ['$scope', '$http', '$location', '$routePa
     });
   }
 
-}]);
+}]); 

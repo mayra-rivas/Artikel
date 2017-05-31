@@ -7,14 +7,14 @@
   "dependencies": {
     "alertify": "*",
     "body-parser": "*",
-    "compression": "^1.6.2",
+    "compression": "*",
     "cookie-parser": "*",
     "express": "*",
-    "express-session": "^1.15.2",
+    "express-session": "*",
     "gulp": "*",
-    "gulp-clean-css": "^3.2.0",
+    "gulp-clean-css": "*",
     "gulp-less": "*",
     "mongoose": "*",
-    "serve-favicon": "^2.4.2"
+    "serve-favicon": "*"
   }
 }

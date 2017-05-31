@@ -45,7 +45,7 @@ module.exports = class REST {
 
     //Artikel byId
     this.app.get('/rest/artikel/:id', (req, res) => {
-      console.log(req.params.id);
+      //console.log(req.params.id);
       this.artikelModel.findById(req.params.id, (err, result) => {
         if (err) console.log(err);
         res.send(result);
@@ -55,7 +55,7 @@ module.exports = class REST {
 
 
     this.app.get('/rest/artikel/har/:id', (req, res) => {
-      console.log('rest har/id: ', req.params.id);
+      // console.log('rest har/id: ', req.params.id);
       this.harModel.findById(req.params.id, (err, result) => {
         if (err) console.log(err);
         res.send(result);
@@ -67,7 +67,7 @@ module.exports = class REST {
 
       //Get the Id_Artikel from req.params.id
       var myId = "";
-      console.log("rest kommentar/id: ",req.params.Id_Artikel);
+      // console.log("rest kommentar/id: ",req.params.Id_Artikel);
       this.harModel.findById(req.params.id, (err, result) => {
         if (err) {
           console.log(err);
@@ -109,7 +109,7 @@ module.exports = class REST {
       var mySkriventId = req.params.id;
       this.skrivModel.find({"artikel" : {"$eq" : mySkriventId}}, (err, result) => {
         var newResult = result;
-        console.log("find: ",newResult);  
+        // console.log("find: ",newResult);  
         if (err) {
           console.log(err);
           res.send(null);
@@ -123,9 +123,7 @@ module.exports = class REST {
        
     }); // end this.app.get
 
-    
-
-
+  
     this.app.all(this.settings.route, function(req, res) {
 
       var model = me.DB.getModel(req.params.model);
@@ -202,7 +200,7 @@ module.exports = class REST {
         res.json(newResult);
       });
     } else if (req.params.model == 'artikel/subkategori/:id') {
-      console.log(req.params.id, "hejhej")
+      // console.log(req.params.id, "hejhej")
       res.json(req.params.id) //&& params.modelID == "subkategori") { // Show all cars with an active repair
        
     }

@@ -67,8 +67,6 @@ myApp.controller('artikelCtrl', ['$scope', '$http', '$location', '$routeParams',
           //var lista = {};
           var responseList = [];
           var responseSort = [];
-          //lista.filter(function (lista) { return (lista.artikel.Id_Artikel == "1"); });
-          //newresponse = $filter('orderBy')(lista, function(item) { return order.indexOf(item.artikel.Id_Artikel);});
           
           // SORT by artikel.Id_Artikel
           responseSort = $filter('orderBy')(response.data,'artikel.Id_Artikel');

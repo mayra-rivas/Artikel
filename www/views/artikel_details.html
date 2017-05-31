@@ -27,7 +27,7 @@
               <br>
               <h4><!-- <b>Ingress</b> --> {{ artikel.artikel.Ingress}}</h4>
               <p class="card-text">
-                <!-- <b>Brodtext</b> -->{{ artikel.artikel.Brodtext}}</p>
+                <!-- <b>Brodtext</b>--> {{ artikel.artikel.Brodtext}}</p>
             </div>
             <hr>
             <div class="row">
@@ -38,22 +38,35 @@
             <hr>
             <div class="row">
               <div class="col-xs-12 col-md-12">
-                <p class="h4">Läsarnas kommentarer</p>
-                <hr>
-              </div>
+               <table class="table table-bordered">
+                 <thead>
+                <tr>                  
+                  <th colspan="4"><h1 class="heading">Läsarnas kommentarer</h1></th>
+                </tr>
+              </thead>
+              <thead>
+                <tr>                  
+                  <th>Användarnamn</th>
+                  <th class="col-md-6">Kommentarer</th>
+                  <th>Datum</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr ng-repeat="komm in kommentar">
+                    
+                    <td><b>{{komm.anvendarnamn }}</b>skrev:</td>
+                    <td>{{ komm.text_kommentar }}</td>
+                    <td>{{komm.datum_kommentar | date:'yyyy-MM-dd'}}</td>
+                    <td><a class="btn btn-danger" href="#" ng-click="deleteArtikelKommentar(komm)">  <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
+                  </tr>
+               
+                </tbody>
+            </table>
             </div>
-
-            <div class="col-xs-12 col-md-12" ng-repeat="komm in kommentar">
-              <p>
-                <b>{{komm.anvendarnamn}}</b> skrev: {{ komm.text_kommentar}}. <!-- Delete kommentar -->
-                  <a class="" href="" ng-click="deleteArtikelKommentar(komm)">Delete</a>
-              </p>
-
             </div>
-          </div>
-
-          <!-- Add comment byartikel -->
-          
+         </div>
+         <!-- Add comment by artikel -->      
           <div class="container artikelDetail">
             <div class="col-xs-12 col-md-12">
               <div class="row">

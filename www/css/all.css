@@ -8510,7 +8510,7 @@ ul.social-network li {
   background-color: white;
   z-index: 999;
   margin: 0;
-  font-size: .75em;
+  font-size: 1.3em;
 }
 #BB-nav .affix {
   position: fixed;
@@ -8722,6 +8722,12 @@ h4.ng-binding {
 }
 p.h4 {
   padding-left: 30px;
+}
+table.table.table-bordered {
+  margin: auto;
+  border-top-width: 2px;
+  width: 95%;
+  margin-bottom: 10px;
 }
 .artikeldetalj {
   padding-left: 30px;

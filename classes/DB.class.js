@@ -15,6 +15,7 @@ module.exports = class DB {
 	}
 
 	connect() {
+		m.mongoose.Promise = global.Promise;
 		// connect
 		m.mongoose.connect('mongodb://' + this.settings.host + '/' + this.settings.db);
 
