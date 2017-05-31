@@ -203,11 +203,11 @@ module.exports = class REST {
       });
     } else if (req.params.model == 'artikel/subkategori/:id') {
       console.log(req.params.id, "hejhej")
-      res.json(req.params.id) //&& params.modelID == "subkategori") { // Show all cars with an active repair
+      res.json(req.params.id) //&& params.modelID == "subkategori") { 
        
     }
 
-    else if (req.params.model == 'employee' && params.modelID == "vacation") { // show all employees in vacation
+    else if (req.params.model == 'employee' && params.modelID == "vacation") { 
       var me = this;
       model['find']({
         vacation: {
