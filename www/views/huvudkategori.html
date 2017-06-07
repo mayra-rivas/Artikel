@@ -4,38 +4,35 @@
     <div ng-controller="huvudkategoriCtrl">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a class="btn pull-right addBoton" href="/addArtikel">Add Artikel</a>
-          <h3 class="panel-title">Huvudkategori: {{ artikel[0].artikel.subkategori.huvudkategori.huvudkategori_typ}}</h3>
-          
+          <a class="btn pull-right addBoton" href="/addArtikel">Lägg till artikel</a>
+          <h3 class="panel-title">Huvudkategori: <b class="katenamn">{{ artikel[0].artikel.subkategori.huvudkategori.huvudkategori_typ}}</b></h3>
         </div>
         <div class="panel-body">
           <div class="row">
-           
-              <div class="col-xs-12 col-md-4" ng-repeat="obj in artikel">
-                <div class="card">
-                  <img style="width:400px"; src="{{obj.bild.img_sokvag}}">
-                  <div class="card-block">
-                    <p class="card-text">{{obj.bild.beskrivning}}</p>
-                    <h1>{{obj.artikel.Rubrik}}</h1>
-                    <p class="card-text">{{obj.artikel.Ingress}}</p>
-                    <p>{{obj.artikel.DatumPublicerad | date:'yyyy-MM-dd'}}</p>
-                    <p><b>Subkategori: </b>{{obj.artikel.subkategori.subkategoriNamn}}</p>
-                    <h3 class="panel-title">{{huvudkategori.Id_subkategori}}</h3>              
-                  <hr>                 
-                   <ul class="card-box">
-                      <li class="card-bar"><a class="btn btn-primary" ng-href="/artikel/har/{{obj._id}}">Visa mer</a>
-                      </li>
-                    </ul>
-                   </div>
+            <div class="col-xs-12 col-md-4" ng-repeat="obj in artikel">
+              <div class="card">
+                <img class="imagehuvud" src="{{obj.bild.img_sokvag}}">
+                <div class="card-block">
+                  <p class="card-text">{{obj.bild.beskrivning}}</p>
+                  <h1>{{obj.artikel.Rubrik}}</h1>
+                  <p class="card-text">{{obj.artikel.Ingress}}</p>
+                  <p>{{obj.artikel.DatumPublicerad | date:'yyyy-MM-dd'}}</p>
+                  <p>Subkategori: <b class="katenamn">{{obj.artikel.subkategori.subkategoriNamn}}</b></p>
+                  <h3 class="panel-title">{{huvudkategori.Id_subkategori}}</h3>
                   <hr>
+                  <ul class="card-box">
+                    <li class="card-bar"><a class="btn btn-primary" ng-href="/artikel/har/{{obj._id}}">Visa mer</a>
+                    </li>
+                  </ul>
                 </div>
-              </div><!--End of ng-repeat-->
+                <hr>
+              </div>
             </div>
-         
+            <!--End of ng-repeat-->
+          </div>
           <!-- End row -->
         </div>
       </div>
     </div>
   </div>
 </div>
-

@@ -175,7 +175,7 @@ myApp.controller('artikelCtrl', ['$scope', '$http', '$location', '$routeParams',
     //console.log(idk);
   
     console.log(kommentar);
-    if (confirm("Are you sure to delete this kommentar?: "+kommentar._id)) {
+    if (confirm("Are you sure that you want to delete this kommentar?: "+kommentar._id)) {
 
         // code for deletion
         $http({
@@ -200,7 +200,7 @@ myApp.controller('artikelCtrl', ['$scope', '$http', '$location', '$routeParams',
     console.log("kommentar id: ",$scope.kommentar.length);
     console.log("har       id: ",$scope.artikel._id);
 
-    if (confirm("Are you sure to delete this Artikel?: "+$scope.artikel.artikel._id)) {
+    if (confirm("Are you sure that you want to delete this Artikel?: "+$scope.artikel.artikel._id)) {
         
         // Delete Bild
         $http({

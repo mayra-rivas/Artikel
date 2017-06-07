@@ -1,15 +1,12 @@
 <div class="container">
-
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Edit Artikel</h3>
+      <h3 class="panel-title">Redigera Artikel</h3>
     </div>
     <div class="panel-body">
       <div class="row">
-       
         <div class="col-md-12" ng-controller="editartikelCtrl">
           <form ng-submit="">
-
             <div class="form-group">
               <div class="row">
                 <div class="col-md-12">
@@ -22,7 +19,6 @@
                 </div>
               </div>
               <br>
-
               <div class="row">
                 <div class="col-md-12 control">
                   <div class="col-md-3">
@@ -32,8 +28,8 @@
                     <input type="text" class="form-control" ng-model="har.artikel.Ingress" placeholder="Ingress">
                   </div>
                 </div>
-              </div><br>
-
+              </div>
+              <br>
               <div class="row">
                 <div class="col-md-12">
                   <textarea type="text" rows="12" class="form-control" ng-model="har.artikel.Brodtext" placeholder="Brodtext"></textarea>
@@ -41,10 +37,7 @@
                 </div>
               </div>
               <hr>
-
             </div>
-
-           
 
             <div class="row">
               <div class="col-md-12 control">
@@ -64,14 +57,11 @@
             </div>
             <hr>
 
-
             <div class="row">
               <div class="col-md-12 control">
                 <div class="form-group col-md-4">
-
                   <label>Bild av</label>
                   <input type="text" class="form-control" ng-model="har.bild.namn_fotograf" placeholder="Fotograf">
-                
                 </div>
                 <div class="form-group col-md-4">
                   <label>Bild URL</label>
@@ -84,48 +74,45 @@
                 <div class="form-group col-md-4">
                   <label>Bild text</label>
                   <input type="text" class="form-control" ng-model="har.bildtext" placeholder="Bildtext">
-                  
                 </div>
               </div>
             </div>
             <hr>
 
-              <div class="row">
-                  <div class="col-xs-12 col-md-6">
-                    <!-- Key personnel input -->
-                    <hr>
-                    <label>Medlem team</label>
-                    <p><font size="2">Add your medlem.</font></p>
-                    <div class="control">
-                      <select name="myMedlem" ng-model="mymedlem" ng-options="item.fName + ' - ' + item.yrkesTitel for item in medlem">
-                        <option value=""> choose medlem </option>
-                      </select>
-                      
-                      <br> 
-                      <!-- Remove & Add personnel -->
-                      <button class="btn btn-md btn-secondary col-md-3 sharp" ng-click="addArtikelSkriv()">Add</button>
-                      <!-- <button class="btn btn-md btn-default col-md-4 sharp" ng-click="removelastMedlem()">Remove last</button> -->
-                    </div>
-                  </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+               
+                <hr>
+                <label>Medlem</label>
+                <p><font size="2">Lägg till medlem.</font></p>
+                <div class="control">
+                  <select name="myMedlem" ng-model="mymedlem" ng-options="item.fName + ' - ' + item.yrkesTitel for item in medlem">
+                    <option value=""> Välja medlem </option>
+                  </select>
 
-                  <div class="col-xs-12 col-md-6">
-                    <div class="control">
-                      <!-- Show medlem from input -->
-                      <div class="control">
-                      <label>Medlem: </label>
-                        <div class="divbutton" ng-repeat="input in skriv">
-                          Name: {{input.medlem.fName}} <br>
-                          Yrkestitel: {{input.medlem.yrkesTitel}} <br>
-                          <button class="buttonHover btn btn-warning" ng-click="deleteArtikelSkriv(input)">Remove</button>
-                          <hr>
-                        </div>  
-                      </div>
+                  <br>
+                  <!-- Remove & Add personnel -->
+                  <button class="btn btn-md btn-secondary col-md-3 sharp" ng-click="addArtikelSkriv()">Lägg till</button>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <div class="control">
+                  <!-- Show medlem from input -->
+                  <div class="control">
+                    <label>Medlem: </label>
+                    <div class="divbutton" ng-repeat="input in skriv">
+                      Name: {{input.medlem.fName}}
+                      <br> Yrkestitel: {{input.medlem.yrkesTitel}}
+                      <br>
+                      <button class="buttonHover btn btn-warning" ng-click="deleteArtikelSkriv(input)">Ta bort</button>
+                      <hr>
                     </div>
                   </div>
+                </div>
               </div>
-            
+            </div>
             <hr>
-            <button ng-click="updateArtikel()" class="btn btn-default">Submit</button>
+            <button ng-click="updateArtikel()" class="btn btn-default">Skicka</button>
             <button class="btn btn-info"><a href="/artikel/har">Back</a></button>
           </form>
         </div>

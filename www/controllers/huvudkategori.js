@@ -4,7 +4,7 @@ myApp.controller('huvudkategoriCtrl', ['$scope', '$http', '$location', '$routePa
 
   // ($location.path() == '/artikel/har/' + $routeParams.id) 
   if ($location.path() == '/artikel/huvudkategori/' + $routeParams.id) { //||($location.path() == '/artikel/subkategori')) {
-    console.log("Dentro de huvudkategori");
+    //console.log("Dentro de huvudkategori");
     var id = 1;
     var responseList = [];
     $http({
@@ -28,7 +28,7 @@ myApp.controller('huvudkategoriCtrl', ['$scope', '$http', '$location', '$routePa
           responseList.push(resp1);
         } 
       });
-      console.log("Bueno: ",responseList[0]);
+      // console.log("Bueno: ",responseList[0]);
       $scope.subkategori = responseList[0];
       $scope.artikel = responseList[0];
 

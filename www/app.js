@@ -49,11 +49,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		templateUrl: "views/subkategori.html",
 		controller: "subkategoriCtrl"
 	})
-	.when("/about/",{
-		templateUrl: "views/about.html",
-		//controller: "about"
-	})
-	
+
 	.when("/artikel/huvudkategori/:id",{
 		templateUrl: "views/huvudkategori.html",
 		controller: "huvudkategoriCtrl"

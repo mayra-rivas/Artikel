@@ -166,7 +166,7 @@ myApp.controller('editartikelCtrl', ['$scope', '$http', '$location', '$routePara
   // Delete Medlem
   $scope.deleteArtikelSkriv = function(skriv){
     //console.log(skriv);
-    alertify.confirm("Are you sure you want to delete this medlem: " + skriv.medlem.fName + "?", function (asc) {
+    alertify.confirm("Are you sure that you want to delete medlem: " + skriv.medlem.fName + "?", function (asc) {
       if (asc) {
         // code for deletion
         var index = $scope.skriv.indexOf(skriv._id);

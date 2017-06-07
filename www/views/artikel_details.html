@@ -4,12 +4,10 @@
       <div class="panel panel-default">
 
         <div class="panel-heading">
-          <h3 class="panel-title">Artikel detajl</h3>
+          <h3 class="panel-title">Komplett artikel</h3>
         </div>
-
         <div class="panel-body artikeldetalj">
           <div class="card">
-
             <div class="col-xs-12 col-md-12">
               <div class="row">
                 <p>{{artikel.artikel.DatumPublicerad | date:'yyyy-MM-dd'}}</p>
@@ -22,12 +20,12 @@
               </div>
             </div>
             <div class="card-block">
-              <p class="card-text"> <b>{{artikel.bild.beskrivning }}</b></p>
+              <p class="card-text"> <b class="bildbeskrivning">{{artikel.bild.beskrivning }}</b></p>
               <p class="card-text"><b>Bild: </b> {{ artikel.bild.namn_fotograf}}</p>
               <br>
               <h4><!-- <b>Ingress</b> --> {{ artikel.artikel.Ingress}}</h4>
               <p class="card-text">
-                <!-- <b>Brodtext</b>--> {{ artikel.artikel.Brodtext}}</p>
+                <!-- <b>Brodtext</b>-->{{ artikel.artikel.Brodtext}}</p>
             </div>
             <hr>
             <div class="row">
@@ -36,46 +34,60 @@
               </div>
             </div>
             <hr>
-            <div class="row">
+            <div class="row hidden-xs">
+              <!--shown only in big screen and tablet-->
               <div class="col-xs-12 col-md-12">
-               <table class="table table-bordered">
-                 <thead>
-                <tr>                  
-                  <th colspan="4"><h1 class="heading">Läsarnas kommentarer</h1></th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>                  
-                  <th>Användarnamn</th>
-                  <th class="col-md-6">Kommentarer</th>
-                  <th>Datum</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-                <tbody>
-                  <tr ng-repeat="komm in kommentar">
-                    
-                    <td><b>{{komm.anvendarnamn }}</b>skrev:</td>
-                    <td>{{ komm.text_kommentar }}</td>
-                    <td>{{komm.datum_kommentar | date:'yyyy-MM-dd'}}</td>
-                    <td><a class="btn btn-danger" href="#" ng-click="deleteArtikelKommentar(komm)">  <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
+                <table class="table table-bordered responsive">
+
+                  <tr>
+                    <h3 class="heading hidden-xs">Läsarnas kommentarer</h3>
+                    <th class="visible-xs" colspan="4">
+                      <h4 class="heading">Läsarnas kommentarer</h4></th>
                   </tr>
-               
-                </tbody>
-            </table>
+                  <thead>
+                    <tr>
+                      <th>Användarnamn</th>
+                      <th class="col-md-6">Kommentarer</th>
+                      <th>Datum</th>
+                      <th>Ta bort</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="komm in kommentar">
+                      <td><b>{{komm.anvendarnamn }}</b> skrev:</td>
+                      <td>{{ komm.text_kommentar }}</td>
+                      <td>{{komm.datum_kommentar | date:'yyyy-MM-dd'}}</td>
+                      <td>
+                        <a class="btn btn-danger" href="#" ng-click="deleteArtikelKommentar(komm)"> <i class="fa fa-trash-o fa-lg"></i>Ta bort</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+            <div class="row visible-xs">  <!--Mobile shows-->            
+              <div class="col-xs-12 col-md-12">
+                <h4 class="heading visible-xs">Läsarnas kommentarer</h4>
+                <hr>
+                <div ng-repeat="komm in kommentar">
+
+                  <b>{{komm.anvendarnamn }}</b> skrev: {{ komm.text_kommentar }}
+                  <br> {{komm.datum_kommentar | date:'yyyy-MM-dd'}}
+                  <i ng-click="deleteArtikelKommentar(komm)" class="fa fa-trash-o fa-sm"></i>
+                </div>
+              </div>
             </div>
-         </div>
-         <!-- Add comment by artikel -->      
+          </div>
+          <!-- Add comment by artikel -->
           <div class="container artikelDetail">
             <div class="col-xs-12 col-md-12">
               <div class="row">
                 <form ng-submit="addKommentar()">
-                  <label>Add kommentar!</label>
+                  <label>Lägg till kommentar</label>
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-5">
-                        <input type="text" class="form-control" ng-model="anvendarnamn" placeholder="anvendarnamn">
+                        <input type="text" class="form-control" ng-model="anvendarnamn" placeholder="Anvendarnamn">
                       </div>
                       <div class="col-md-5">
                         <input type="date" class="form-control" ng-model="datum_kommentar" placeholder="datum_kommentar">
@@ -84,13 +96,13 @@
                     <br>
                     <div class="row">
                       <div class="col-md-5">
-                        <textarea type="text" rows="6" class="form-control" ng-model="text_kommentar" placeholder="text_kommentar">
+                        <textarea type="text" rows="6" class="form-control" ng-model="text_kommentar" placeholder="Text_kommentar">
                         </textarea>
                       </div>
                       <div class="row">
                         <div class="col-xs-6 col-md-5 text-center">
                           <ul class="card-box">
-                            <li class="card-bar"><a class="btn btn-warning" ng-click="addArtikelKommentar()">Add Kommentar</a>
+                            <li class="card-bar"><a class="btn btn-warning" ng-click="addArtikelKommentar()">Lägg till Kommentar</a>
                             </li>
                           </ul>
                         </div>
@@ -101,7 +113,7 @@
                 </form>
               </div>
             </div>
-        </div>
+          </div>
 
           <div class="col-xs-12 col-md-12 botones">
             <hr>
@@ -110,7 +122,7 @@
               </li>
             </ul>
             <div class="pull-right col-xs-6 col-md-6">
-              <a href="/artikel/editArtikel/{{artikel._id}}">Edit</a> | <a href="" ng-click="deleteArtikel()">Delete</a>
+              <a href="/artikel/editArtikel/{{artikel._id}}">Redigera</a> | <a href="" ng-click="deleteArtikel()">Ta bort</a>
             </div>
           </div>
 
